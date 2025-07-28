@@ -1,0 +1,2 @@
+# Ethicompanion
+your ethical ally
