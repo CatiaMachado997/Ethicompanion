@@ -54,23 +54,25 @@ EthicCompanion is built with a modern and robust stack, optimized for performanc
 - **Vertex AI Vector Search**: Essential vector database for our RAG system, optimized for semantic search of our ethical knowledge base
 
 ### AI Models / Large Language Models (LLMs)
+- **Gemma 3n (E2B/E4B)**: Primary models for efficient ethical reasoning and multimodal processing (text, image, audio) - optimized for the Impact Challenge
 - **Google Gemini**: For complex ethical reasoning and nuanced response generation
-- **Gemma 3n**: Used for more efficient tasks, such as specific ethical classifications or potential on-device inferences, optimizing performance (crucial for the Impact Challenge)
 - **Claude (Anthropic)**: Complements Google models, offering diversity and robustness in ethical reasoning
 
 ### RAG (Retrieval Augmented Generation)
 Ensures AI responses are grounded in curated and verifiable ethical knowledge, increasing reliability and explainability.
 
 ### NLP & Embeddings
-- **Hugging Face**: Tools and models for Natural Language Processing tasks
+- **Hugging Face Transformers**: Tools and models for Natural Language Processing tasks, including Gemma 3n integration
 - **Vertex AI Embedding API**: Generates high-quality embeddings for our RAG system, essential for effective semantic search
+- **Sentence Transformers**: Fallback embedding generation for offline capabilities
 
 ### AI Orchestration
 - **LangChain**: Python framework for building LLM applications, orchestrating the RAG pipeline, prompt management, and conversational memory
 
 ### Ethical AI & Guardrails
 - **NeMo Guardrails**: Open-source framework for defining and applying behavior rules, allowed topics, and safety limits for LLM interactions
-- **Content Moderator**: Integration with APIs like Google Perspective API or OpenAI Moderation API to filter harmful content in inputs and outputs
+- **Google Perspective API**: Content moderation to filter harmful content in inputs and outputs
+- **Custom Ethical Classifiers**: Specialized models for crisis detection, bias identification, and ethical scope determination
 - **Curated Ethical Knowledge Base**: Specific and curated content on ethical principles and guides (see `ethical_knowledge_base/`)
 - **Human-in-the-Loop & Feedback Mechanism**: An integrated system for collecting user feedback and allowing human review, ensuring continuous improvement of AI's ethical alignment
 
@@ -85,7 +87,9 @@ Ensures AI responses are grounded in curated and verifiable ethical knowledge, i
 4. **LangChain Orchestration**: LangChain in FastAPI orchestrates the reasoning flow:
    - The query is transformed into embeddings by the Vertex AI Embedding API
    - Vertex AI Vector Search retrieves the most relevant segments from our Ethical Knowledge Base (stored in `.md` and vectorized)
-   - The original query, along with the relevant ethical segments, is sent to the LLMs (Gemini/Gemma/Claude)
+   - The original query, along with the relevant ethical segments, is sent to the LLMs (Gemma 3n/Gemini/Claude)
+   - **Gemma 3n E2B** handles fast ethical classifications and content moderation
+   - **Gemma 3n E4B** processes complex ethical reasoning and multimodal inputs (images, audio)
    - NeMo Guardrails ensures the LLM's response adheres to defined ethical rules and principles
 
 5. **Response**: The ethical response is sent back by FastAPI to Flutter, which displays it to the user
@@ -464,13 +468,15 @@ ethiccompanion-mvp/
 
 ### Upcoming Features
 - [ ] Complete integration with Vertex AI Vector Search
-- [ ] Gemma 3n implementation for ethical classifications
-- [ ] User feedback system
-- [ ] Persistent conversation history
-- [ ] Offline mode with intelligent caching
-- [ ] User profile-based personalization
-- [ ] Intelligent well-being notifications
-- [ ] Digital well-being metrics dashboard
+- [x] **Gemma 3n implementation for ethical classifications and multimodal processing**
+- [ ] User feedback system with human-in-the-loop improvements
+- [ ] Persistent conversation history with ethical context tracking
+- [ ] Offline mode with intelligent caching for crisis situations
+- [ ] User profile-based personalization using Gemma 3n efficient models
+- [ ] Intelligent well-being notifications powered by custom classifiers
+- [ ] Digital well-being metrics dashboard with real-time insights
+- [x] **Enhanced guardrails with NeMo Guardrails and content moderation**
+- [x] **RAG pipeline with Vertex AI embeddings and ChromaDB**
 
 ### How to Contribute
 1. Fork this repository

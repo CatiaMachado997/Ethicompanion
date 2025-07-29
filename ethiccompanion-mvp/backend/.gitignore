@@ -1,0 +1,82 @@
+# Sensitive Files - NEVER COMMIT THESE!
+.env
+.env.local
+.env.production
+.env.staging
+
+# API Keys and Secrets
+*api_key*
+*secret*
+*credential*
+*.key
+*.pem
+*.p12
+*service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# IDE and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite3
+*.sqlite
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Documentation builds
+docs/_build/
+
+# Flask/Django stuff
+instance/
+.webassets-cache
+
+# Node.js (if using)
+node_modules/

@@ -81,7 +81,9 @@ async def chat_endpoint(request: ChatRequest):
 
 if __name__ == "__main__":
     import uvicorn
+    import os
+    port = int(os.getenv("PORT", 8000))
     print("🚀 Iniciando EthicCompanion API...")
-    print("📍 API disponível em: http://localhost:8000")
-    print("📚 Documentação em: http://localhost:8000/docs")
-    uvicorn.run("main_simple:app", host="0.0.0.0", port=8000, reload=True)
+    print(f"📍 API disponível em: http://localhost:{port}")
+    print(f"📚 Documentação em: http://localhost:{port}/docs")
+    uvicorn.run("main_simple:app", host="0.0.0.0", port=port, reload=False)

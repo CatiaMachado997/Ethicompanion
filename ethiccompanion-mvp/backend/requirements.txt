@@ -1,4 +1,4 @@
-# Backend Requirements - Ethicompanion MVP
+# Backend Requirements - Ethicompanion MVP with Gemma 3n
 
 # FastAPI Framework
 fastapi==0.104.1
@@ -16,6 +16,17 @@ aiohttp==3.9.1
 # Google AI (Gemini) integration
 google-generativeai==0.3.2
 google-cloud-aiplatform==1.38.1
+
+# Gemma 3n specific requirements for hackathon
+kagglehub
+transformers>=4.53.0
+timm
+torch
+torchvision
+torchaudio
+accelerate
+bitsandbytes
+peft
 
 # Anthropic Claude integration
 anthropic==0.7.8
