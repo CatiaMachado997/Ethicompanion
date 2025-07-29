@@ -48,7 +48,7 @@ asyncio==3.4.3
 typing-extensions==4.8.0
 
 # Text processing and NLP
-nltk==3.8.1
+nltk==3.9
 spacy==3.7.2
 langchain==0.0.350
 langchain-community==0.0.5
