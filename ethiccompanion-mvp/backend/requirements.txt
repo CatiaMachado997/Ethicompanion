@@ -50,7 +50,7 @@ typing-extensions==4.8.0
 # Text processing and NLP
 nltk==3.8.1
 spacy==3.7.2
-langchain==0.0.350
+langchain==0.2.5
 langchain-community==0.0.5
 
 # Monitoring and logging
