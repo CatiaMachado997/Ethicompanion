@@ -51,7 +51,7 @@ typing-extensions==4.8.0
 nltk==3.8.1
 spacy==3.7.2
 langchain==0.0.350
-langchain-community==0.0.5
+langchain-community==0.2.19
 
 # Monitoring and logging
 structlog==23.2.0
